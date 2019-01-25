@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Cronometro</string>
+    <string name="start">START</string>
+    <string name="textview">TextView</string>
+    <string name="continuar">CONTINUE</string>
+    <string name="reset">RESET</string>
+    <string name="post">POST</string>
+    <string name="handler">HANDLER</string>
+    <string name="async">ASYNC</string>
+    <string name="pause">PAUSE</string>
+    <string name="inicio">00:00:00</string>
+</resources>
