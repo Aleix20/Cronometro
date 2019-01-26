@@ -1,5 +1,6 @@
 package com.example.aleix.cronometro;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
     Boolean sigue = false, pausa = false;
     int contador;
     Integer[] tiempo = new Integer[3];
-
+    public static final String EXTRA_MESSAGE = "com.example.aleix.cronometro.MESSAGE";
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btnAsync = findViewById(R.id.btn_async);
         txtCrono = findViewById(R.id.txt_crono);
         btnPause = findViewById(R.id.btn_pause);
+
 
         inciarTiempo();
 
@@ -73,6 +76,16 @@ public class MainActivity extends AppCompatActivity {
 
                 pausa = false;
 
+
+            }
+        });
+
+        btnHandler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                intent= new Intent(btnHandler.getContext(), handler.class);
+                startActivity(intent);
 
             }
         });
@@ -160,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
             tiempo[i] = 0;
         }
     }
+
 
     static void espera(int i) {
         try {
