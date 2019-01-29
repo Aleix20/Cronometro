@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                             tiempo[2] = contador;
                             espera(100);
 
-                            if (tiempo[2] == 10) {
+                            if (tiempo[2] == 100) {
                                 tiempo[1]++;
                                 tiempo[2] = 00;
                                 contador = 0;

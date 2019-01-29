@@ -106,7 +106,7 @@ public class handler extends AppCompatActivity {
                             tiempo[2] = contador;
                             espera(100);
 
-                            if (tiempo[2] == 10) {
+                            if (tiempo[2] == 100) {
                                 tiempo[1]++;
                                 tiempo[2] = 00;
                                 contador = 0;
@@ -115,8 +115,8 @@ public class handler extends AppCompatActivity {
                                 tiempo[1] = 00;
                             }
                             msg.what=1;
-                            handler.sendMessage(msg);
-                            espera(100);
+                            handler.sendMessageDelayed(msg,100);
+
 
 
                     }
