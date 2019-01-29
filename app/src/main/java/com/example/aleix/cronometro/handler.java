@@ -27,8 +27,8 @@ public class handler extends AppCompatActivity {
         btnContinue = findViewById(R.id.btn_continue);
         btnReset = findViewById(R.id.btn_reset);
 
-        btnHandler = findViewById(R.id.btn_handler);
-        btnAsync = findViewById(R.id.btn_async);
+
+
         txtCrono = findViewById(R.id.txt_crono);
         btnPause = findViewById(R.id.btn_pause);
 
@@ -104,9 +104,9 @@ public class handler extends AppCompatActivity {
                             }
                             contador++;
                             tiempo[2] = contador;
-                            espera(100);
+                            espera(1000);
 
-                            if (tiempo[2] == 100) {
+                            if (tiempo[2] == 60) {
                                 tiempo[1]++;
                                 tiempo[2] = 00;
                                 contador = 0;
@@ -115,10 +115,8 @@ public class handler extends AppCompatActivity {
                                 tiempo[1] = 00;
                             }
                             msg.what=1;
-                            espera(100);
                             handler.sendMessage(msg);
-
-
+                            espera(100);
 
 
                     }

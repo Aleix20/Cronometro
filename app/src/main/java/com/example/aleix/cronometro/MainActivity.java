@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent2;
-                intent2= new Intent(btnAsync.getContext(), async.class);
+                intent2= new Intent(MainActivity.this, async.class);
                 startActivity(intent2);
             }
         });

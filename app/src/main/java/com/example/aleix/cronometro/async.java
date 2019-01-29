@@ -22,6 +22,7 @@ public class async extends AppCompatActivity {
     Integer[] tiempo = new Integer[3];
     public static final String EXTRA_MESSAGE = "com.example.aleix.cronometro.MESSAGE";
     Intent intent;
+    boolean retorno = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,7 @@ public class async extends AppCompatActivity {
                 sigue = false;
                 pausa = false;
                 btnStart.setEnabled(true);
+                retorno=false;
 
                 //SignalAll
             }
@@ -86,7 +88,7 @@ public class async extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 tareaAsincrona = new MiTareaAsincrona();
-                tareaAsincrona.execute(100);
+                tareaAsincrona.execute(1);
                 btnReset.setEnabled(false);
                 btnStart.setEnabled(false);
             }
@@ -115,7 +117,7 @@ public class async extends AppCompatActivity {
         @Override
         protected Boolean doInBackground(Integer... integers) {
 //se ejecuta en otro hilo
-            boolean retorno = true;
+
 
             while (sigue){
 
@@ -129,11 +131,11 @@ public class async extends AppCompatActivity {
                     }
                 }
                 contador++;
-                espera(10);
+                espera(1000);
                 tiempo[2] = contador;
-                espera(10);
 
-                if (tiempo[2] == 100) {
+
+                if (tiempo[2] == 60) {
                     tiempo[1]++;
                     tiempo[2] = 00;
                     contador = 0;
@@ -176,6 +178,7 @@ public class async extends AppCompatActivity {
 // aBoolean es el valor que devuelve el doInBackground
             super.onPostExecute(aBoolean);
             txtCrono.setText("00:00:00");
+            inciarTiempo();
             btnStart.setEnabled(true);
 
         }
