@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     int contador;
     Integer[] tiempo = new Integer[3];
     public static final String EXTRA_MESSAGE = "com.example.aleix.cronometro.MESSAGE";
-    Intent intent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,10 +83,19 @@ public class MainActivity extends AppCompatActivity {
         btnHandler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent;
 
                 intent= new Intent(btnHandler.getContext(), handler.class);
                 startActivity(intent);
 
+            }
+        });
+        btnAsync.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2;
+                intent2= new Intent(btnAsync.getContext(), async.class);
+                startActivity(intent2);
             }
         });
 
