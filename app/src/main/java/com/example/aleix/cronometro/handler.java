@@ -26,7 +26,7 @@ public class handler extends AppCompatActivity {
         btnStart = findViewById(R.id.btn_start);
         btnContinue = findViewById(R.id.btn_continue);
         btnReset = findViewById(R.id.btn_reset);
-        btnPost = findViewById(R.id.btn_post);
+
         btnHandler = findViewById(R.id.btn_handler);
         btnAsync = findViewById(R.id.btn_async);
         txtCrono = findViewById(R.id.txt_crono);
@@ -115,7 +115,8 @@ public class handler extends AppCompatActivity {
                                 tiempo[1] = 00;
                             }
                             msg.what=1;
-                            handler.sendMessageDelayed(msg,100);
+                            espera(100);
+                            handler.sendMessage(msg);
 
 
 
